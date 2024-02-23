@@ -1,1 +1,23 @@
-<p>dona-http works!</p>
+<h1>Redes Sociales mas usadas</h1>
+<hr>
+
+<div class="alert alert-info"
+     *ngIf="doughnutChartData.datasets.length === 0; else divGrafica">
+  Cargando...
+</div>
+
+<div class="row">
+  <div class="col">
+    <ng-template #divGrafica>
+      <canvas baseChart
+              class="chart"
+              [data]="doughnutChartData"
+              [type]="doughnutChartType">
+      </canvas>
+
+      <div class="float-end text-primary mt-3">
+        Informacion en billones de usuarios
+      </div>
+    </ng-template>
+  </div>
+</div>
